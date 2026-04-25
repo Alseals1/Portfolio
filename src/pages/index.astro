@@ -1,24 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
-import Hero from "../components/Hero.astro";
-import Services from "../components/Services.astro";
-import Projects from "../components/Projects.astro";
-import About from "../components/About.astro";
-import Skills from "../components/Skills.astro";
-import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Projects from "../components/Projects";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Contact from "../components/Contact";
 ---
 
 <Layout>
   <Nav />
   <main>
-    <Hero />
-    <Services />
-    <Projects />
-    <About />
-    <Skills />
-    <Contact />
+    <!-- Hero loads immediately (above fold) -->
+    <Hero client:load />
+    <!-- Everything else loads when scrolled into view -->
+    <Services client:visible />
+    <Projects client:visible />
+    <About client:visible />
+    <Skills client:visible />
+    <Contact client:visible />
   </main>
   <Footer />
 </Layout>
