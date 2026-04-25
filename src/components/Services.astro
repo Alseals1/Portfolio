@@ -1,0 +1,73 @@
+---
+const services = [
+  {
+    icon: "⬡",
+    title: "Web App Development",
+    description:
+      "Full-stack web applications built with React, TypeScript, and Node.js. From simple marketing sites to complex platforms with auth, dashboards, and APIs.",
+    bullets: ["React & TypeScript frontends", "REST & GraphQL APIs", "Database design & integration"],
+  },
+  {
+    icon: "⬡",
+    title: "API & Backend Systems",
+    description:
+      "Scalable backend services that connect your frontend to your data. Authentication, third-party integrations, and business logic built to last.",
+    bullets: ["Node.js / Express APIs", "Supabase & PostgreSQL", "Third-party integrations"],
+  },
+  {
+    icon: "⬡",
+    title: "Cloud Infrastructure",
+    description:
+      "AWS-powered infrastructure that scales automatically and doesn't break. No servers to babysit — just reliable, cost-effective cloud that works.",
+    bullets: ["AWS (Lambda, S3, CloudFront)", "Terraform infrastructure as code", "CI/CD with GitHub Actions"],
+  },
+];
+---
+
+<section id="services" class="py-24 px-6">
+  <div class="mx-auto max-w-6xl">
+    <!-- heading -->
+    <div class="mb-16 text-center">
+      <p class="mb-3 text-sm font-medium uppercase tracking-widest text-indigo-400">
+        What I do
+      </p>
+      <h2 class="text-4xl font-bold text-white">Services</h2>
+      <p class="mt-4 text-gray-400">
+        End-to-end engineering — from design to deployed.
+      </p>
+    </div>
+
+    <!-- cards -->
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        services.map((service) => (
+          <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-8 transition-colors hover:border-indigo-500/30 hover:bg-white/[0.05]">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600/20 text-2xl text-indigo-400">
+              ⚡
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-white">{service.title}</h3>
+            <p class="mb-5 text-sm leading-relaxed text-gray-400">{service.description}</p>
+            <ul class="space-y-2">
+              {service.bullets.map((b) => (
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <span class="h-1.5 w-1.5 rounded-full bg-indigo-400" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- CTA under services -->
+    <div class="mt-12 text-center">
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
+      >
+        Start a project →
+      </a>
+    </div>
+  </div>
+</section>
