@@ -1,0 +1,83 @@
+---
+const certs = [
+  { label: "AWS Solutions Architect", sublabel: "Associate", color: "orange" },
+  { label: "AWS Cloud Practitioner", sublabel: "Certified", color: "orange" },
+  { label: "CompTIA A+", sublabel: "Certified", color: "red" },
+];
+
+const stats = [
+  { value: "4+", label: "Years shipping" },
+  { value: "300+", label: "Learners taught" },
+  { value: "40%", label: "User growth supported" },
+  { value: "25%", label: "Faster dev cycles" },
+];
+---
+
+<section id="about" class="py-24 px-6">
+  <div class="mx-auto max-w-6xl">
+    <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+      <!-- left: text -->
+      <div>
+        <p class="mb-3 text-sm font-medium uppercase tracking-widest text-indigo-400">
+          About me
+        </p>
+        <h2 class="mb-6 text-4xl font-bold text-white">
+          Engineer who ships — not just codes
+        </h2>
+        <div class="space-y-4 text-gray-400 leading-relaxed">
+          <p>
+            I'm Alandis Seals, a Full Stack Engineer based in Birmingham, AL. I've spent 4+ years building production
+            apps — starting in iOS with Swift, expanding into full-stack web with React, Node.js, TypeScript, and AWS.
+          </p>
+          <p>
+            I currently lead development at Ed Farm, building platforms used by hundreds of learners and community
+            members. I've architected everything from AI-powered learning tools to serverless cloud infrastructure —
+            and I've taught 300+ adults how to build software along the way.
+          </p>
+          <p>
+            For freelance clients, that means you get someone who can take your idea from zero to deployed — and
+            explain every decision in plain English.
+          </p>
+        </div>
+
+        <!-- certs -->
+        <div class="mt-8 flex flex-wrap gap-3">
+          {
+            certs.map((cert) => (
+              <div class="flex items-center gap-2 rounded-lg border border-white/5 bg-white/[0.03] px-4 py-2.5">
+                <div class={`h-2 w-2 rounded-full ${cert.color === "orange" ? "bg-orange-400" : "bg-red-400"}`} />
+                <div>
+                  <p class="text-xs font-medium text-white">{cert.label}</p>
+                  <p class="text-xs text-gray-500">{cert.sublabel}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- resume link -->
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          class="mt-8 inline-flex items-center gap-2 text-sm text-indigo-400 transition-colors hover:text-indigo-300"
+        >
+          Download resume →
+        </a>
+      </div>
+
+      <!-- right: stats grid -->
+      <div class="grid grid-cols-2 gap-4">
+        {
+          stats.map((stat) => (
+            <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-8 text-center">
+              <p class="text-4xl font-bold text-white">{stat.value}</p>
+              <p class="mt-2 text-sm text-gray-400">{stat.label}</p>
+            </div>
+          ))
+        }
+      </div>
+
+    </div>
+  </div>
+</section>
