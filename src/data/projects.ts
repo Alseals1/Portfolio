@@ -5,6 +5,7 @@ export interface Project {
   stack: string[];
   github?: string;
   live?: string;
+  appStore?: string;
   featured: boolean;
 }
 
@@ -25,6 +26,15 @@ export const projects: Project[] = [
     outcome: "Serves hundreds of learners across Ed Farm community sites with zero downtime.",
     stack: ["TypeScript", "React", "TanStack", "Supabase", "Mastra AI", "Cloudflare"],
     github: "https://github.com/Alseals1",
+    featured: true,
+  },
+  {
+    title: "The Movement: Ed Farm",
+    description:
+      "iOS app published on the App Store for Ed Farm's Movement program — built with SwiftUI and a GraphQL-powered headless CMS for dynamic content.",
+    outcome: "Live on the App Store, used by Ed Farm community members to access program content and resources.",
+    stack: ["SwiftUI", "Swift", "Strapi CMS", "GraphQL"],
+    appStore: "https://apps.apple.com/us/app/the-movement-ed-farm/id6670628673",
     featured: true,
   },
   {

@@ -21,6 +21,13 @@ const services = [
       "AWS-powered infrastructure that scales automatically and doesn't break. No servers to babysit — just reliable, cost-effective cloud that works.",
     bullets: ["AWS (Lambda, S3, CloudFront)", "Terraform infrastructure as code", "CI/CD with GitHub Actions"],
   },
+  {
+    icon: "⬡",
+    title: "Mobile App Development",
+    description:
+      "Native iOS apps built with Swift and SwiftUI — published to the App Store and designed to Apple's Human Interface Guidelines.",
+    bullets: ["Swift & SwiftUI", "App Store publishing", "API & CMS integration"],
+  },
 ];
 ---
 
@@ -38,7 +45,7 @@ const services = [
     </div>
 
     <!-- cards -->
-    <div class="grid gap-6 md:grid-cols-3">
+    <div class="grid gap-6 md:grid-cols-2">
       {
         services.map((service) => (
           <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-8 transition-colors hover:border-indigo-500/30 hover:bg-white/[0.05]">
